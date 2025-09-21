@@ -1,0 +1,76 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: Quarto Computations\n",
+        "format:\n",
+        "  html:\n",
+        "    embed-resources: true\n",
+        "---\n",
+        "\n",
+        "This dataset contains a subset of the fuel economy data from the EPA."
+      ],
+      "id": "d8c1522c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "pip install plotnine"
+      ],
+      "id": "857e961a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: load-packages\n",
+        "from plotnine import *\n",
+        "from plotnine.data import mpg"
+      ],
+      "id": "load-packages",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "The visualization below shows a positive, strong, and linear relationship between the city and highway mileage of these cars.\n",
+        "Additionally, mileage is higher for cars with fewer cylinders."
+      ],
+      "id": "e90b8e6c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: scatterplot\n",
+        "(\n",
+        "    ggplot(mpg, aes(x=\"hwy\", y=\"cty\", color=\"cyl\"))\n",
+        "    + geom_point(alpha=0.5, size=2)\n",
+        "    + scale_color_continuous()\n",
+        "    + theme_bw()\n",
+        ")"
+      ],
+      "id": "scatterplot",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/sahilbains/opt/anaconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
