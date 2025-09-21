@@ -6,6 +6,8 @@ format:
     embed-resources: true
 ---
 
+**GitHub Repository:** https://github.com/sbains2/GSB544
+
 This dataset contains a subset of the fuel economy data from the EPA.
 
 ```{python}
